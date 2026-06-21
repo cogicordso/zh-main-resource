@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>爱游戏 · 资料与索引探索</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #2c2f33;
+      padding: 2rem 1.2rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* 开场短句 近似hero */
+    .opening {
+      background: #ffffff;
+      padding: 2.4rem 2rem;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      border: 1px solid #e4e7eb;
+      margin-bottom: 2.2rem;
+      transition: box-shadow 0.2s ease;
+    }
+
+    .opening:hover {
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .opening h1 {
+      font-weight: 500;
+      font-size: 2rem;
+      letter-spacing: -0.01em;
+      color: #1f2226;
+      margin-bottom: 0.6rem;
+    }
+
+    .opening .kicker {
+      font-size: 1.1rem;
+      background: #eef0f3;
+      display: inline-block;
+      padding: 0.2rem 1rem;
+      border-radius: 30px;
+      color: #3b4048;
+      font-weight: 450;
+      margin-bottom: 1.2rem;
+    }
+
+    .opening p {
+      color: #3f444b;
+      max-width: 70ch;
+    }
+
+    /* 承接段落 卡片风格 */
+    .bridge-card {
+      background: #ffffff;
+      border: 1px solid #e2e6ec;
+      border-radius: 18px;
+      padding: 1.8rem 2rem;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .bridge-card p {
+      color: #3b4048;
+    }
+
+    .bridge-card .highlight {
+      background: #f0f2f5;
+      border-left: 4px solid #8896a6;
+      padding: 0.6rem 1.2rem;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.95rem;
+    }
+
+    /* 特点列表 – 信息维度 */
+    .features-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .feature-card {
+      background: #ffffff;
+      border: 1px solid #e2e6ec;
+      border-radius: 18px;
+      padding: 1.6rem 1.2rem 1.2rem 1.2rem;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.02);
+      transition: all 0.15s ease;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
+    }
+
+    .feature-card h3 {
+      font-weight: 500;
+      font-size: 1.2rem;
+      letter-spacing: -0.01em;
+      color: #1f2226;
+      border-bottom: 1px solid #eef0f3;
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .feature-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .feature-card li {
+      padding: 0.25rem 0;
+      position: relative;
+      padding-left: 1.1rem;
+      font-size: 0.95rem;
+      color: #3d424a;
+    }
+
+    .feature-card li::before {
+      content: "·";
+      position: absolute;
+      left: 0;
+      color: #7c8a9c;
+      font-weight: bold;
+    }
+
+    /* 温和的结尾 / 索引提示 */
+    .closing-notes {
+      background: #ffffff;
+      border: 1px solid #e2e6ec;
+      border-radius: 18px;
+      padding: 1.6rem 2rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+    }
+
+    .closing-notes p {
+      color: #3b4048;
+      max-width: 70%;
+    }
+
+    .closing-notes .tagline {
+      font-size: 0.9rem;
+      color: #6f7885;
+      background: #eef0f3;
+      padding: 0.35rem 1rem;
+      border-radius: 30px;
+      white-space: nowrap;
+    }
+
+    /* 细边 faq 摘要风格 */
+    .faq-mini {
+      background: #ffffff;
+      border: 1px solid #e2e6ec;
+      border-radius: 18px;
+      padding: 1.4rem 2rem 1.6rem;
+      margin-bottom: 1.8rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    }
+
+    .faq-mini details {
+      margin: 0.4rem 0;
+      border-bottom: 1px dashed #e2e5ea;
+      padding: 0.5rem 0;
+    }
+
+    .faq-mini details:last-of-type {
+      border-bottom: none;
+    }
+
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #2f343b;
+      font-size: 1rem;
+      padding: 0.2rem 0;
+    }
+
+    .faq-mini summary::-webkit-details-marker {
+      color: #88929f;
+    }
+
+    .faq-mini details p {
+      margin: 0.6rem 0 0.2rem 0.8rem;
+      font-size: 0.93rem;
+      color: #464d56;
+    }
+
+    /* 嵌入链接 */
+    a {
+      color: #33638e;
+      text-decoration: none;
+      border-bottom: 1px solid #cbd5e1;
+      transition: border-color 0.1s, color 0.1s;
+    }
+
+    a:hover {
+      border-bottom-color: #33638e;
+      color: #1f4b6e;
+    }
+
+    /* 底部 */
+    .footer-meta {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7c8594;
+      padding: 1.2rem 0 0.2rem;
+      border-top: 1px solid #e0e3e9;
+      margin-top: 0.8rem;
+    }
+
+    @media (max-width: 500px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .opening h1 {
+        font-size: 1.6rem;
+      }
+      .closing-notes {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .closing-notes p {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 开场短句 -->
+  <div class="opening">
+    <div class="kicker">资料整理 · 索引视角</div>
+    <h1>重新理解「游戏」信息流</h1>
+    <p>从早期的攻略合辑到如今的社区档案，围绕游戏产生的知识碎片一直在膨胀。如何更系统地归拢、标注和串联这些内容，成为许多深度爱好者与资料整理者共同面对的课题。而「爱游戏」正尝试在这个方向上提供一种轻量、聚焦的观察入口。</p>
+  </div>
+
+  <!-- 承接段落——从索引切入 -->
+  <div class="bridge-card">
+    <p>在庞大且快速迭代的游戏领域，高效的资料索引显得尤为重要。一个清晰的整理框架，能帮玩家跨越版本与平台，快速定位到核心信息。无论是机制拆解、剧情脉络还是版本变迁，都离不开结构化的梳理。</p>
+    <div class="highlight">
+      <strong>索引的价值</strong> —— 它不只是链接的集合，更是一种知识组织的元方法。
+    </div>
+    <p>基于这种理解，<a href="https://zh-main-aiyouxi.com.cn">爱游戏</a> 以资料库的思维整合游戏相关内容，将分散的信息节点织成一张可供浏览和回溯的网。你可以在其中找到不同题材的专题整理，也能顺着线索进一步挖掘。</p>
+  </div>
+
+  <!-- 特点列表：卡片式信息维度 -->
+  <div class="features-section">
+    <div class="feature-card">
+      <h3>分类标签</h3>
+      <ul>
+        <li>按类型与主题划分</li>
+        <li>跨作品关联标注</li>
+        <li>常见名词与术语</li>
+      </ul>
+    </div>
+    <div class="feature-card">
+      <h3>更新记录</h3>
+      <ul>
+        <li>版本调整摘要</li>
+        <li>新增条目说明</li>
+        <li>修订与勘误</li>
+      </ul>
+    </div>
+    <div class="feature-card">
+      <h3>参考结构</h3>
+      <ul>
+        <li>基于时间线 / 系列</li>
+        <li>开发者及社区引用</li>
+        <li>内部链接与外部来源</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 场景与提示 融合 -->
+  <div class="bridge-card" style="margin-bottom:1.8rem;">
+    <p style="font-weight:450;">可能适合这样的使用场景：</p>
+    <p style="margin-top:0.2rem;">当你想回顾某款作品的设定演变，或需要为一个小型研究项目收集素材时，有条理的索引可以节省大量筛选时间。保持适度的归档习惯，也会让个人的游戏知识库更可持续。</p>
+    <p style="margin-top:0.6rem; font-size:0.95rem; background:#f5f7fa; padding:0.4rem 1rem; border-radius:30px; display:inline-block;">提示：可结合浏览器书签或本地笔记工具辅助整理。</p>
+  </div>
+
+  <!-- FAQ 摘要风格（温和问答） -->
+  <div class="faq-mini">
+    <p style="font-weight:500; margin-bottom:0.4rem; color:#2b3037;">常见索引思路（简答）</p>
+    <details>
+      <summary>如何开始整理自己的游戏资料库？</summary>
+      <p>从你最熟悉的一两款游戏切入，收集官方设定、社区解析等，按要素分类（系统、剧情、美术、版本）。不需要一次完成，逐步迭代即可。</p>
+    </details>
+    <details>
+      <summary>信息过载时怎么处理？</summary>
+      <p>先确立核心问题，例如“我想梳理某角色的所有出场”，然后只收录与之相关的内容。暂时无关的留到后续专题。</p>
+    </details>
+    <details>
+      <summary>是否有必要使用专门的工具？</summary>
+      <p>视需求而定。简单的文档或表格就能满足大部分个人索引的需求。关键在于结构清晰而不是工具花哨。</p>
+    </details>
+  </div>
+
+  <!-- 温和结尾 -->
+  <div class="closing-notes">
+    <p>以上是关于资料整理与信息索引的一些朴素观察。如果你也对系统化的游戏知识感兴趣，不妨从 <a href="https://zh-main-aiyouxi.com.cn">爱游戏</a> 开始你的探索。</p>
+    <span class="tagline">持续归档 · 温和生长</span>
+  </div>
+
+  <div class="footer-meta">
+    基于开放整理思路 · 不构成投资或消费建议
+  </div>
+</div>
+</body>
+</html>
