@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · 米兰体育</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f5f3f0;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.7;
+      color: #1e1e1e;
+      -webkit-font-smoothing: antialiased;
+      padding: 2rem 1.5rem;
+    }
+
+    .page-wrapper {
+      max-width: 720px;
+      margin: 0 auto;
+      background: #ffffff;
+      border-radius: 36px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.03), 0 4px 12px rgba(0, 0, 0, 0.02);
+      padding: 4rem 2.5rem 4.5rem;
+    }
+
+    /* hero 区域 — 杂志扉页感 */
+    .hero {
+      margin-bottom: 2.8rem;
+      border-bottom: 1px solid #e9e5de;
+      padding-bottom: 2.5rem;
+    }
+
+    .hero-label {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #9b8f83;
+      border: 1px solid #ddd7cf;
+      padding: 0.15rem 1rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem;
+      font-weight: 500;
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+      color: #1c1b1a;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #4f4944;
+      max-width: 90%;
+      margin-top: 0.5rem;
+      font-weight: 350;
+    }
+
+    /* 正文段落 + 标题层级 */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 450;
+      letter-spacing: -0.01em;
+      margin-top: 2.6rem;
+      margin-bottom: 1rem;
+      padding-top: 0.2rem;
+      color: #2b2826;
+      border-left: 3px solid #c3b6a8;
+      padding-left: 1rem;
+    }
+
+    .section-title:first-of-type {
+      margin-top: 0;
+    }
+
+    p {
+      margin-bottom: 1.3rem;
+      font-size: 1rem;
+      color: #302c29;
+    }
+
+    .quiet-note {
+      background: #faf8f5;
+      padding: 1.25rem 1.6rem;
+      border-radius: 24px;
+      margin: 1.8rem 0 0.8rem;
+      color: #3b3631;
+      font-size: 0.95rem;
+      border: 1px solid #ece6df;
+    }
+
+    .quiet-note strong {
+      font-weight: 500;
+      color: #1f1c19;
+    }
+
+    /* 卡片式小标 */
+    .inset-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1rem;
+      margin: 1.2rem 0 1.8rem;
+      padding: 0;
+    }
+
+    .inset-list span {
+      background: #f2ede8;
+      border-radius: 40px;
+      padding: 0.25rem 1rem;
+      font-size: 0.85rem;
+      color: #3b342e;
+      letter-spacing: 0.01em;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e3ddd5;
+      margin: 2.6rem 0 1.8rem;
+      width: 40%;
+    }
+
+    .footer-remark {
+      font-size: 0.9rem;
+      color: #6f655c;
+      border-top: 1px solid #e9e1d9;
+      padding-top: 2rem;
+      margin-top: 2.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    .footer-remark a {
+      color: #2c2824;
+      font-weight: 450;
+      text-decoration: none;
+      border-bottom: 1px solid #b9aea2;
+      transition: border 0.2s, color 0.2s;
+    }
+
+    .footer-remark a:hover {
+      border-bottom-color: #1f1b17;
+      color: #0b0a09;
+    }
+
+    .small-meta {
+      color: #8b8075;
+      font-size: 0.8rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* 响应式 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+
+      .page-wrapper {
+        padding: 2.5rem 1.5rem 3rem;
+        border-radius: 28px;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+        padding-left: 0.75rem;
+      }
+
+      .quiet-note {
+        padding: 1rem 1.2rem;
+      }
+
+      .footer-remark {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+
+      .page-wrapper {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <!-- 杂志式横幅 -->
+  <div class="hero">
+    <div class="hero-label">特写 · 简明指南</div>
+    <h1>米兰体育<br>从清晰出发</h1>
+    <p>不是每一个平台都值得你停留，但了解路径本身，就是一次审慎的开始。</p>
+  </div>
+
+  <!-- 背景说明  -->
+  <div class="section-title">为什么关注它</div>
+  <p>
+    如果你常留意体育资讯或赛事动向，大概率会碰见「米兰体育」这个名字。它并非突然出现，而是逐渐在相关讨论中被反复提及。
+    对很多新用户来说，第一个问题往往简单而直接：它究竟是什么？一个聚合体育内容的地方，一个可以获取信息、查看比分、阅读短评的站点。
+    它不制造喧哗，但如果你愿意花几分钟熟悉一下界面与栏目，会发现一切都比想象中更规整。
+  </p>
+
+  <!-- 三段自然介绍：特点 / 场景 / 提示 融合 -->
+  <div class="section-title">栏目与节奏</div>
+  <p>
+    从首页进入，内容大致分为几个区域：<strong>赛事动态</strong>（实时更新的短讯与简评）、<strong>专题文章</strong>（带有分析向的较长报道）、以及<strong>数据面板</strong>（表格、阵容、走势）。
+    这种结构并不复杂，但足够让一个想快速了解当天赛况的人，几步就找到关键信息。实际上，<a href="https://ssl-milansport.com" style="color:#2b2826; text-decoration:underline; text-underline-offset:3px; text-decoration-color:#bcb0a3;">米兰体育</a>在信息排布上偏向克制——没有弹窗干扰，没有自动播放的视频流。
+    它更像一本安静的体育杂志：你可以随时打开，也随时合上。
+  </p>
+
+  <div class="section-title">谁适合花时间</div>
+  <p>
+    如果你是那种喜欢自己判断、不愿被算法推送牵着走的人，这里的浏览体验会比较自在。没有「猜你喜欢」的横幅轰炸，没有夸张的标题党。
+    页面加载速度中上，移动端适配做得不错——在通勤路上用手机翻阅，排版依然干净。另外，历史数据查询做得相对细致，适合做简单回顾或笔记。
+  </p>
+
+  <!-- 安静提示卡片 -->
+  <div class="quiet-note">
+    <strong>访问提醒 ·</strong> 第一次打开时，建议先花两分钟浏览顶部分类栏，再进入感兴趣的板块。
+    部分链接会跳转至外部信息页，注意辨别来源。整体上，保持平常心浏览即可。
+  </div>
+
+  <!-- 小标签 增加细节层次 -->
+  <div class="inset-list">
+    <span>无强制注册</span>
+    <span>内容更新稳定</span>
+    <span>界面简洁</span>
+    <span>适合安静阅读</span>
+  </div>
+
+  <hr />
+
+  <!-- 页尾访问提示 + 链接自然嵌在叙述中 -->
+  <div class="footer-remark">
+    <span>
+      若你想亲自感受一下，可以前往 <a href="https://ssl-milansport.com">米兰体育</a>，用几分钟了解它的布局与内容调性。
+    </span>
+    <span class="small-meta">独立视角 · 不构成推荐</span>
+  </div>
+
+  <!-- 简短的 FAQ 摘要（杂志式附注） -->
+  <div style="margin-top: 2rem; font-size: 0.9rem; color: #605751; border-left: 1px solid #dcd3ca; padding-left: 1rem;">
+    <span style="display: block; font-weight: 400; margin-bottom: 0.2rem;">常见疑问摘要</span>
+    是否需要注册？不需要。 —— 是否有手机版本？网页自适应，无独立 app。 —— 内容偏向？综合体育，以足球、篮球、网球为主。
+  </div>
+
+</div>
+</body>
+</html>
